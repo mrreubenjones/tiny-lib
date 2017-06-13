@@ -9,13 +9,13 @@
 		var dataList = document.getElementById('book-list');
 		var inputField = document.getElementById('entry-field');
 
-		function listBooks (booksArray,listElement){
+		function listBooks (booksArray){
 			var newHTML = [];
 			$.each(booksArray, function(index, value) {
 				newHTML.push('<li>' + value + '</li>');
 			});
-			$("#book-list").html(books);
-			$(listElement).html(newHTML.join(""));		
+			// $("#book-list").html(books);
+			$("#your-books").html(newHTML.join(""));		
 		}
 
 		function pullBooks (match){
@@ -48,16 +48,16 @@
 
 		$("#book-form").submit(function( event ) {
 			var entry = $("#entry-field").val();
-			console.log('Adding ' + entry + ' to book list.');
+			console.log('Adding ' + entry + ' to your book list.');
 			books.push(entry);
 			$("#entry-field").val('');
-			listBooks(books,'#book-list');
+			listBooks(books);
 			event.preventDefault();
 		});
 
 		$("#entry-field").keyup(function() {
 			if($("#entry-field").val().length > 4){
-				jQuery('#book-list').html('');
+				$('#book-list').html('');
 				pullBooks($("#entry-field").val());
 			}
 		});
@@ -69,9 +69,9 @@
 <div>
 <form id="book-form">
 	<input type="text" id="entry-field" list="book-list"/>
-	<datalist id="book-list"><option value="C"></datalist>
+	<datalist id="book-list"></datalist>
 </form>
-<ol id="book-list">
+<ol id="your-books">
 	
 </ol>	
 </div>
