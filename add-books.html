@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sounds like a good time to add some books</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){	
+		var books = [];
+		var dataList = document.getElementById('book-list');
+		var inputField = document.getElementById('entry-field');
+
+		function listBooks (booksArray,listElement){
+			var newHTML = [];
+			$.each(booksArray, function(index, value) {
+				newHTML.push('<li>' + value + '</li>');
+			});
+			$("#book-list").html(books);
+			$(listElement).html(newHTML.join(""));		
+		}
+
+		function pullBooks (match){
+			var request = new XMLHttpRequest();
+
+			request.onreadystatechange = function(response) {
+				if (request.readyState === 4) {
+					if (request.status === 200) {
+						var jsonOptions = JSON.parse(request.responseText);
+						console.log(jsonOptions);
+						jsonOptions.items.forEach(function(item) {
+							
+							var option = document.createElement('option');
+							option.value = item.volumeInfo.title;
+							dataList.appendChild(option);
+						});
+					} else {
+						// An error occured :(
+						console.log('ajax error');
+					}
+				}
+			};
+
+			var url = 'https://www.googleapis.com/books/v1/volumes?q=' + match + '&key=AIzaSyAureXa85bdjYc82Amp56OWcgBSpmGFMQY';
+
+			request.open('GET', url, true);
+			request.send();
+		}
+
+
+		$("#book-form").submit(function( event ) {
+			var entry = $("#entry-field").val();
+			console.log('Adding ' + entry + ' to book list.');
+			books.push(entry);
+			$("#entry-field").val('');
+			listBooks(books,'#book-list');
+			event.preventDefault();
+		});
+
+		$("#entry-field").keyup(function() {
+			if($("#entry-field").val().length > 4){
+				jQuery('#book-list').html('');
+				pullBooks($("#entry-field").val());
+			}
+		});
+
+	});		
+	</script>
+</head>
+<body>
+<div>
+<form id="book-form">
+	<input type="text" id="entry-field" list="book-list"/>
+	<datalist id="book-list"><option value="C"></datalist>
+</form>
+<ol id="book-list">
+	
+</ol>	
+</div>
+</body>
+</html>
