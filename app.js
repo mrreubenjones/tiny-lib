@@ -43,6 +43,6 @@ app.get('/books',function(req,res){
 
 // This is where the express server starts (or node server? not 100% sure)
 // Without this, we got nothing goin on
-app.listen(5000,function(err){
+app.listen(port,function(err){
 	console.log('running server on port ' + port); // this is printed to the CLI
 });
