@@ -1,12 +1,47 @@
+/* TinyLib
+-----------------
+/* Version 1
+/* Creators: Heath Morris and Reuben Jones
+
+
+/* Contents
+-----------------
+/* Global selectors
+/* Bootstrap overwrites
+/* Page specific
+/* Module specific
+
+
+
+
+
+
+/* Global selectors ------------------------------------------------- */
+
 html {
   height: 100%;
 }
 
 body {
-  background: url(../images/books.jpg) no-repeat;
+  /*background: url(../images/books.jpg) no-repeat;*/
   background-size: cover;
   height: 100%;
 }
+
+
+
+/* Bootstrap mods --------------------------------------------------- */
+
+.container {
+  margin-top: 70px;
+}
+
+
+
+
+
+/* Page specific ---------------------------------------------------- */
+
 
 #home {
   color: #fff;
@@ -22,9 +57,31 @@ body {
   text-shadow: 2px 2px 0 rgba(0,0,0,1);
 }
 
-.home-banner h1 {
-  font-size: 10rem;
-  font-weight: bold;
+.home-banner hr {
+  width: 30rem;
+}
+
+
+
+
+/* Module specific ------------------------------------------------ */
+
+
+header {
+  margin: 60px 10px 0;
+  padding: 20px;
+  background-color: #aaa;
+  color: #fff;
+}
+
+
+
+
+
+
+
+.tinylib-brand {
+  color: #fff;
   /* Mark Dotto's CSS Magic http://markdotto.com/playground/3d-text/*/
   text-shadow: 0 1px 0 #ccc,
                0 2px 0 #c9c9c9,
@@ -40,8 +97,9 @@ body {
                0 20px 20px rgba(0,0,0,.15);
 }
 
-.home-banner hr {
-  width: 30rem;
+#home tinylib-brand {
+  font-size: 10rem;
+  font-weight: bold;
 }
 
 

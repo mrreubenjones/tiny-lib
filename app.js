@@ -38,7 +38,7 @@ app.get('/add',function(req,res){
 
 // localhost:5000/books
 app.get('/books',function(req,res){
-	res.send('Here ya books fam');
+	res.send('all the books!');
 });
 
 // This is where the express server starts (or node server? not 100% sure)
