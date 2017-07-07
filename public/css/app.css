@@ -124,6 +124,10 @@ header {
   padding: 0;
 }
 
+#books-module h2 {
+  margin-bottom: 40px;
+}
+
 #your-books {
   display: flex;
   flex-flow: row wrap;
@@ -142,6 +146,7 @@ header {
 
 #your-books img {
   max-width: 100%;
+  border-top: 3px solid #333;
 }
 
 .sort-tab {
@@ -156,7 +161,7 @@ header {
 }
 
 .display-options {
-  font-size: 2rem;
+  font-size: 1.4rem;
   margin: 0;
   padding: 0;
   display: flex;
@@ -167,7 +172,7 @@ header {
 }
 
 .display-options i {
-  padding: 10px 10px 10px 0;
+  padding: 10px 0 ;
 }
 
 .display-options .selected {
