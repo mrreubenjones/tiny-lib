@@ -2,14 +2,22 @@
 <html>
 <head>
   <title>Welcome to TinyLib</title>
+  <!-- Link to jQuery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <!-- Link to Font Awesome -->
+  <script src="https://use.fontawesome.com/11949ef53d.js"></script>
+  <!-- Link to Bootstrap -->
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Link to App Styles -->
   <link rel="stylesheet" type="text/css" href="/css/app.css">
 </head>
 <body id="dashboard">
 
+<!-- Navigation -->
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
@@ -19,7 +27,6 @@
         </button>
         <a class="navbar-brand" href="#">TinyLib</a>
       </div>
-
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
@@ -35,15 +42,56 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-  <header>
-    <h1>Welcome back, <span>Johannes</span></h1>
-  </header>
-
-
   <div class="container">
 
+    <div class="row">
 
-    <div></div>
+      <!-- Header -->
+      <header class="col-xs-12">
+        <h1>Welcome back, <span>Johannes</span></h1>
+      </header>
+
+    </div>
+
+    <div class="row">
+      <!-- Books -->
+      <div id="books-module" class="col-xs-12 col-md-6">
+        <div class="row">
+          <h2 class="col-xs-6">Your Books</h2>
+          <select class="sort-tab form-control input-sm pull-right">
+            <option>Sort by: Title A-Z</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="books row">
+          <ul id="your-books" class="col-xs-11">
+
+            <li class="col-xs-3"><img src="https://about.canva.com/wp-content/uploads/sites/3/2015/01/business_bookcover.png"></li>
+            <li class="col-xs-3"><img src="https://about.canva.com/wp-content/uploads/sites/3/2015/01/creative_bookcover.png"></li>
+            <li class="col-xs-3"><img src="https://about.canva.com/wp-content/uploads/sites/3/2015/01/vintage_bookcover.png"></li>
+            <li class="col-xs-3"><img src="http://www.creativindie.com/wp-content/uploads/2013/10/Enchantment-Book-Cover-Best-Seller1.jpg"></li>
+            <li class="col-xs-3"><img src="https://spark.adobe.com/images/landing/examples/how-to-book-cover.jpg"></li>
+            <li class="col-xs-3"><img src="https://about.canva.com/wp-content/uploads/sites/3/2015/01/children_bookcover.png"></li>
+            <li class="col-xs-3"><img src="https://craigmod.com/images/journal/coccyx/aba-04.png"></li>
+            <li class="col-xs-3"><img src="https://marketplace.canva.com/MAB___U-clw/1/0/thumbnail_large/canva-yellow-lemon-children-book-cover-MAB___U-clw.jpg"></li>
+            <li class="col-xs-3"><img src="https://s-media-cache-ak0.pinimg.com/736x/a0/96/ff/a096ff3bafb7786b59ef9ba9d3e7ddf2--how-to-design-design-your-own.jpg"></li>
+            <li class="col-xs-3"><img src="https://marketplace.canva.com/MACXD6ZL4z8/1/0/thumbnail_large/canva-red-and-white-typography-book-cover-MACXD6ZL4z8.jpg"></li>
+            <li class="col-xs-3"><img src="https://marketplace.canva.com/MACXC0twKgo/1/0/thumbnail_large/canva-green-and-pink-science-fiction-book-cover-MACXC0twKgo.jpg"></li>
+            <li class="col-xs-3"><img src="https://marketplace.canva.com/MACCmaX6y6U/1/0/thumbnail_large/canva-modern-creative-colorful-pattern-ebook-cover-MACCmaX6y6U.jpg"></li>
+            <li class="col-xs-3"><img src="https://s-media-cache-ak0.pinimg.com/736x/9e/b5/95/9eb595e51d197624cfe12e959179994d--beautiful-book-covers-cover-books.jpg"></li>
+          </ul>
+          <div class="display-options col-xs-1">
+            <i class="fa fa-th selected" aria-hidden="true"></i>
+            <i class="fa fa-align-justify" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
 
 
   </div>
@@ -52,10 +100,6 @@
 
 
 
-
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
