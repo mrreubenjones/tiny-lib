@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node server.js",
+    "dev": "webpack && npm start"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,8 @@
     "express": "^4.15.3"
   },
   "devDependencies": {
-    "mocha": "^3.4.2"
+    "html-webpack-plugin": "^2.29.0",
+    "mocha": "^3.4.2",
+    "webpack": "^3.1.0"
   }
 }
