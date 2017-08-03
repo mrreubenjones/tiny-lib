@@ -12,6 +12,8 @@
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- Link to App Styles -->
   <link rel="stylesheet" type="text/css" href="/css/app.css">
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/ico" href="/images/favicon.png">
 </head>
 <body id="dashboard">
 
@@ -60,10 +62,9 @@
           <h2 class="col-xs-6">Your Books</h2>
           <select class="sort-tab form-control input-sm pull-right">
             <option>Sort by: Title A-Z</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option>Sort by: Title Z-A</option>
+            <option>Sort by: Author A-Z</option>
+            <option>Sort by: Author Z-A</option>
           </select>
         </div>
         <div class="books row">
@@ -84,8 +85,8 @@
             <li class="col-xs-3"><img src="https://s-media-cache-ak0.pinimg.com/736x/9e/b5/95/9eb595e51d197624cfe12e959179994d--beautiful-book-covers-cover-books.jpg"></li>
           </ul>
           <div class="display-options col-xs-1">
-            <i class="fa fa-th selected" aria-hidden="true"></i>
-            <i class="fa fa-align-justify" aria-hidden="true"></i>
+            <button class="grid-btn selected"><i class="fa fa-th" aria-hidden="true"></i></button>
+            <button class="list-btn"><i class="fa fa-align-justify" aria-hidden="true"></i></button>
           </div>
         </div>
       </div>
@@ -100,6 +101,20 @@
 
 
 
-  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+  </script>
+
+  <script type="text/javascript">
+    $(function() {
+
+      // Books list button behaviours
+      $('.list-btn').on('click', function(){
+        $('#your-books li').removeclass('col-xs-3').addclass('col-xs-12');
+
+      })
+
+    });
+  </script>
+
 </body>
 </html>

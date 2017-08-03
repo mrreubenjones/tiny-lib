@@ -1,6 +1,5 @@
-// import express
+// import packages
 var express = require('express');
-
 
 // intitialize express by creating an object... I think
 var app = express();
@@ -8,6 +7,8 @@ var app = express();
 // Set up our port for listening, for later
 var port = 5000;
 
+// Set up template language (EJS)
+app.set('view engine', 'ejs');
 
 // Anything with app.use is going to be used by express before everything else.
 // The following example assumes we have the line app.use(express.static('public')); above the routes in our code, as we do here.
@@ -19,7 +20,7 @@ app.use(express.static('public'));
 // Now, when the server is running, you should be able to run localhost:5000/css/app.css and see the css from /public/css/app.css
 
 
-app.use(express.static('src/views'));
+// app.use(express.static('src/views'));
 // I think this one is going to be temporary until we start using a templating engine
 
 
@@ -38,7 +39,7 @@ app.get('/add',function(req,res){
 
 // localhost:5000/books
 app.get('/books',function(req,res){
-	res.send('all the books!');
+	res.render('books');
 });
 
 // This is where the express server starts (or node server? not 100% sure)
