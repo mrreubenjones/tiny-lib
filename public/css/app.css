@@ -175,6 +175,12 @@ header {
   padding: 10px 0 ;
 }
 
+.display-options button {
+  border: 0;
+  background-color: transparent;
+  outline: none;
+}
+
 .display-options .selected {
   background-color: #eee;
 }
